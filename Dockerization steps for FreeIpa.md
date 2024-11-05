@@ -14,12 +14,12 @@ Some references :
 
 Use this command:
 ```
-sudo hostnamectl set-hostname ipa.<a_name>. local
+sudo hostnamectl set-hostname ipa.example. local
 ```
 
 Or you can change it in a permanent way with `sudo nano /etc/hosts to add`:
 ```
-127.0.0.1 ipa.<a_name>.local
+127.0.0.1 ipa.example.local
 ```
 **STEP 2 :** Remapping
 
@@ -62,12 +62,12 @@ services:
   freeipa_server:
     image: freeipa/freeipa-server:almalinux-9
     container_name: freeipa-serverofficial-container
-    hostname: ipa.mcfaden.local
+    hostname: ipa.example.local
     environment:
-      PASSWORD: Frodo123
+      PASSWORD: mypassword
     volumes:
       - /var/lib/ipa-data:/data:Z
-    command: ipa-server-install -U -r MCFADEN.LOCAL --no-ntp
+    command: ipa-server-install -U -r EXAMPLE.LOCAL --no-ntp
     stdin_open: true
     tty: true
     
@@ -95,11 +95,11 @@ Then use this command to add an admin:
 ```
 kinit admin
 ```
-Using password `Frodo123`
+Using password `mypassword`
 
 **STEP 6:** Test
 
-At last, try to connect to a browser using your server name (`ipa.<a_name>.local for example`) you must have this display: 
+At last, try to connect to a browser using your server name (`ipa.example.local for example`) you must have this display: 
 
 ![](Aspose.Words.64c8171b-7e82-4aef-842a-4fc9a630baf5.002.png)
 
