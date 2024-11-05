@@ -17,7 +17,7 @@ Use this command:
 sudo hostnamectl set-hostname ipa.example. local
 ```
 
-Or you can change it in a permanent way with `sudo nano /etc/hosts to add`:
+Or you can change it in a permanent way with `sudo nano /etc/hosts` to add:
 ```
 127.0.0.1 ipa.example.local
 ```
